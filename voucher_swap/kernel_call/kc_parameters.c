@@ -116,12 +116,20 @@ addresses__iphone10_1__16C101() {
 	ADDRESS(IORegistryEntry__getRegistryEntryID)            = SLIDE(0xfffffff00759424c);
 }
 
+static void
+addresses__iPhone8_4__16C101() {
+    ADDRESS(IOUserClient__vtable)                           = SLIDE(0xfffffff0088ba630);
+    ADDRESS(IORegistryEntry__getRegistryEntryID)            = SLIDE(0xfffffff0071c01d1);
+}
+
+
 // A list of address initializations by platform.
 static struct initialization addresses[] = {
 	{ "iPhone11,8", "16C50-16C104", addresses__iphone11_8__16C50  },
 	{ "iPhone11,2", "16C50-16C104", addresses__iphone11_2__16C50  },
 	{ "iPhone10,1", "16B92",        addresses__iphone10_1__16B92  },
 	{ "iPhone10,1", "16C101",       addresses__iphone10_1__16C101 },
+    { "iPhone8,4",  "16C101",       addresses__iPhone8_4__16C101  },
 };
 
 // ---- PAC initialization ------------------------------------------------------------------------

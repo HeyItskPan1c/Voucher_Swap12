@@ -120,6 +120,13 @@ offsets__iphone10_1__16B92() {
 	OFFSET(task, bsd_info) = 0x358;
 }
 
+static void
+offsets__iphone8_4__16C101() {
+    offsets__iphone8_4__16C101();
+    
+    OFFSET(task, bsd_info) = 0x9b4;
+}
+
 // Initialize offset parameters whose values are computed from other parameters.
 static void
 initialize_computed_offsets() {
@@ -131,6 +138,7 @@ initialize_computed_offsets() {
 static struct initialization offsets[] = {
 	{ "iPhone11,*", "16C50-16C104", offsets__iphone11_8__16C50  },
 	{ "iPhone10,1", "16B92-16C101", offsets__iphone10_1__16B92  },
+    { "iPhone8,4",  "16C101",       offsets__iphone8_4__16C101  },
 	{ "*",          "*",            initialize_computed_offsets },
 };
 
